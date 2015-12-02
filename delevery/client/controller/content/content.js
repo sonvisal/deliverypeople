@@ -54,6 +54,8 @@ Template.content.events({
 
       return Session.set("error_message",error_message);
     }else{
+      Session.set("error_message","");
+      delete Session.keys['error_message'];
       var attr={
           title:title,
           email:email,
