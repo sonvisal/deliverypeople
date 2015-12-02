@@ -22,6 +22,9 @@ Router.route('/service',{
 Router.route('/page_detail',{
 	name:'pagedetail'
 });
+Router.route('/contentlist',{
+	name:'contentlist'
+});
 Router.route('/:username',{
 	name:'profile',
 	data:function(){

@@ -4,6 +4,10 @@ Meteor.publish("users",function(){
 Meteor.publish('images', function (){ 
   return images.find({})
 });
+Meteor.publish('content', function (){ 
+  return content.find({})
+});
+
 
 
 
