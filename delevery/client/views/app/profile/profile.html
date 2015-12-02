@@ -1,0 +1,97 @@
+<template name="profile">
+    <div id="wrapper">
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <!-- Page Heading -->
+                <div class="row">
+					<nav class="navbar">
+					  <div class="container">
+						<ul class="nav nav-tabs nav-justified">
+						  <li role="presentation"><a href="#">News</a></li>
+						  <li role="presentation"><a href="#">Photos</a></li>
+						  <li role="presentation"><a href="#">Profile</a></li>
+						  <li role="presentation">{{this.profile.firstname}} {{this.profile.lastname}}
+                        {{#if currentUser}}
+                            <input type="button" value="{{getText}}" data-id="{{this._id}}" id="addfriend">
+                        {{/if}}</li>
+						</ul>
+					  </div>
+					</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="panel-body">
+				{{#each users}}
+				<div class="form-group">
+					<div class="col-xs-8 col-sm-4 col-lg-4">
+						<p><!-- <img src="{{baseUrl}}images/{{getImage profile.image}}" style="width:120px;"> -->
+							{{#if haveImage}}
+								<img src="{{baseUrl}}images/{{getProfileImage}}" class="img-responsive center-block" width="150px" height ="200px">
+							{{else}}
+								<img src="{{baseUrl}}images/sport.png" class="img-responsive center-block" width="150px" height ="200px">
+							{{/if}}
+						</p>
+						<div class="form-group">
+							<label class="control-label col-sm-12" for="image">Upload Image</label>
+						</div>		   
+						<div class="form-group">
+							<input type="file" name="image" id="image" class="your-upload-class form-control input-sm">
+						</div>
+					</div>
+					<table class="">
+					 
+						<thead>
+							<tr>
+								<td>First Name: </td><input type="text" id="fname" class="fname" value="{{profile.firstname}}">
+							</tr>
+							<tr>
+								<td>Last Name:</td><input id="lname" class="lname" value="{{profile.lastname}}">
+							</tr>
+							<tr>
+								<td>Username:</td>
+								<input id="uname" class="uname" value="{{profile.username}}">
+							</tr>
+							<tr>{{#each emails}}
+								<td>Email:</td><input id="email" class="email" value="{{address}}">
+								{{/each}}
+							</tr>
+							<tr>
+								<td>Current Password:</td><input type="password" id="currentpassword" class="cupass" value="" placeholder="Your current Password">
+							</tr>
+							
+							<tr>
+								<td>New Password:</td><input type="password" id="newpassword" class="npass" value="" placeholder="Your New Password">
+							</tr>
+							<tr>
+								<td>Confirm Password:</td><input type="password" id="conformpassword" class="copass" value="" placeholder="Confirm Password">
+								<p id="form-messages"></p>
+							</tr>
+							
+							<tr>
+								<td>Facebook:</td><input id="facebook" class="facebook" value="{{profile.facebook}}">
+							</tr>
+							<tr>
+								<td>Instagram:</td><input id="instagram" class="instagram" value="{{profile.instagram}}">
+							</tr>
+							<tr>
+								<td>Twitter:</td><input id="twitter" class="twitter" value="{{profile.twitter}}">
+							</tr>
+							<hr/>
+							<tr>
+								<td>
+									<div class="form-group">
+										<input type="button" value="Update" id="updateProfile" class="btn btn-info">
+									</div>
+								</td>
+							</tr>
+					   </thead>
+					 
+			        </table>
+					
+		        </div>
+				 {{/each}}
+			</div>	
+		</div>
+</template>

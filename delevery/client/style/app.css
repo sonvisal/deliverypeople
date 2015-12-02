@@ -1,0 +1,15 @@
+.answer{
+	margin-bottom:10px;
+}
+.btn-group .radio, .btn-group .checkbox{
+	margin:0;
+}
+#pcontent .box{
+	overflow: inherit;
+}
+#content_title{
+	height: 41px;
+}
+#content_content{
+	height: 40px;
+}

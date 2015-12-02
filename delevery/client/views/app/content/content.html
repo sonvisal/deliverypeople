@@ -1,0 +1,126 @@
+<Template name="content">
+	<div class="container">
+			<span style="padding:30px;"></span>
+
+<!-- Section Background -->
+	<section class="section-background">
+		<div class="container">
+			<h2 class="page-header">
+				get in touch with us
+			</h2>
+			<ol class="breadcrumb">
+				<li><a href="index.html">Home</a></li>
+				<li class="active">&nbsp;content</li>
+			</ol>
+		</div> <!-- /.container -->
+	</section> <!-- /.section-background -->
+
+
+	<section class="section-wrapper contact-and-map">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6">
+					<h2 class="section-title">
+						Post Content
+					</h2>
+					<div class="form">
+						{{#if postError}}
+							 <div class="alert alert-danger" role="alert">
+								<span style="display:inline-block" class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+								<span style="display:inline-block" class="sr-only">Error:</span>
+							 {{postErrormsg}}
+							 </div>
+							 {{/if}}
+						<div class="input-group">
+						 	<input class="form-control border-radius border-right " id="title" type="text" placeholder="Title" required>
+						 	<span class="input-group-addon  border-radius custom-addon">
+								<i class="ion-person"></i>
+							</span>
+						</div>
+						<div class="input-group">
+						 	<input class="form-control border-radius border-right" name="email" type="email" id="email" placeholder="Email address" required>
+						 	<span class="input-group-addon  border-radius custom-addon">
+								<i class="ion-email"></i>
+							</span>
+						</div>
+						<div class="input-group">
+						 	<input class="form-control border-radius border-right" type="tel" id="phone" placeholder="Phone number">
+						 	<span class="input-group-addon  border-radius custom-addon">
+								<i class="ion-ios-telephone"></i>
+							</span>
+						</div>
+						<div class="input-group">
+							<input class="form-control border-radius border-right" type="number" id="price" placeholder="Price">
+							<span class="input-group-addon  border-radius custom-addon">
+								<i class="ion-ios-price"></i>
+							</span>
+						</div>
+						<div class="input-group">
+							<input class="form-control border-radius border-right" type="text" id="locationstart" placeholder="Location Start">
+							<span class="input-group-addon  border-radius custom-addon">
+								<i class="ion-ios-price"></i>
+							</span>
+						</div>
+
+						<div class="input-group">
+							<input class="form-control border-radius border-right" type="text" id="locationend" placeholder="Location End">
+							<span class="input-group-addon  border-radius custom-addon">
+								<i class="ion-ios-price"></i>
+							</span>
+						</div>
+						<div class="input-group">
+							<input class="form-control border-radius border-right" type="date" id="datetime" placeholder="Date Time">
+							<span class="input-group-addon  border-radius custom-addon">
+								<i class="ion-ios-price"></i>
+							</span>
+						</div>
+
+						<div class="input-group">
+						<textarea class="form-control border-radius border-right" rows="8" placeholder="Write Message" id="message"></textarea>
+							<!-- <input type="text" name="text" rows="8" class="form-control border-radius border-right message" placeholder="Write Message"> -->
+							<span class="input-group-addon border-radius custom-addon">
+								<i class="ion-chatbubbles"></i>
+							</span>
+						</div>
+						<div class="input-group">
+							<input class="form-control border-radius border-right" type="file" id="image" placeholder="file">
+							<span class="input-group-addon  border-radius custom-addon">
+								<i class="ion-ios-price"></i>
+							</span>
+						</div>
+						<button type="submit" class="btn btn-default border-radius custom-button" id="postcontent" >Post Content </button>
+					</div>
+				</div> <!-- /.col-sm-6 -->
+				<div class="col-sm-6">
+					<h2 class="section-title">
+						Find Us Via Google Map
+					</h2>
+					<div id="googleMap"></div>
+				</div> <!-- /.col-sm-6 -->
+			</div>
+		</div>
+	</section>
+<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-4">
+					<div class="text-left">
+						&copy; Copyright Euro Travels
+					</div>
+				</div>
+				<div class="col-xs-4">
+					Theme by <a href="http://www.themewagon.com">THEMEWAGON</a>
+				</div>
+				<div class="col-xs-4">
+					<!-- <div class="top">
+						<a href="#header">
+							<i class="ion-arrow-up-b"></i>
+						</a>
+					</div> -->
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	</div>
+</Template>

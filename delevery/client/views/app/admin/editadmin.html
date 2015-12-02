@@ -1,0 +1,67 @@
+<template name="editadmin">
+	<div class="container">
+    <div class="row">
+		<div class="col-md-4 col-md-offset-4">
+    		<div class="panel panel-default">
+			  	<div class="panel-heading">
+			    	<h3 class="panel-title">Edit user</h3>
+			 	</div>
+			  	<div class="panel-body">
+			    	<form accept-charset="UTF-8" role="form">
+					
+						<fieldset>
+						
+							<div class="form-group">
+								<input type="text" class="form-control" id="firstname" value="{{profile.firstname}}" placeholder="First Name">
+							</div>
+						  <div class="form-group">
+								<input type="text" class="form-control" id="lastname" value="{{profile.lastname}}" placeholder="Last Name">
+						  </div>
+						  <div class="form-group">
+								<input type="text" class="form-control" id="username" value="{{profile.username}}" placeholder="UserName">
+						  </div>
+						  <div class="form-group">
+							{{#each emails}}
+								<input type="email" class="form-control" id="email" value="{{address}}" placeholder="E-mail">
+							{{/each}}
+						  </div>
+						  <div class="form-group">
+								<input type="password" class="form-control" id="password" value="{{profile.password}}" placeholder="Password">
+						  </div>
+						  <div class="form-group">
+								<input type="text" class="form-control" id="fb" value="{{profile.facebook}}" placeholder="Facebook">
+						  </div>
+						  <div class="form-group">
+								<input type="text" class="form-control" id="insta" value="{{profile.instagram}}" placeholder="Instagram">
+						  </div>
+						  <div class="form-group">
+								<input type="text" class="form-control" id="twitter" value="{{profile.twitter}}" placeholder="Twitter">
+						  </div>
+						  <div class="form-group">
+								<label>Role</label>
+								<select name="language" id="role" class="form-control" placeholder="Role">
+									<option value="{{roles.mygroup}}" style="display:none">{{roles.mygroup}}</option>
+									<option value="Admin">Admin</option>
+									<option value="Memeber">Memeber</option>
+								</select>
+							</div>
+								
+							<div class="row">
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <div class="form-group">
+                                        <input type="submit" value="Update User" id="updateUser" class="btn btn-info btn-block">
+                                    </div>
+                                </div>
+                               
+                            </div>
+							
+						</fieldset>
+						
+			      	</form>
+			    </div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</template>

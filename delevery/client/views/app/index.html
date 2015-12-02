@@ -1,0 +1,53 @@
+<Template name="index">
+	<div class="container">
+			<span style="padding:30px;"></span>
+			
+				<div class="col-md-12">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">Please Login</h3>
+						</div>
+						<div class="panel-body">
+							<form accept-charset="UTF-8" role="form">
+							<fieldset>
+								<div class="form-group">
+									<input type="text" class="title form-control" id="title" name="title" placeholder="Your title" required="required">
+								</div>
+								<div class="form-group">
+									<textarea class="content form-control error" id="content" placeholder="Your post content" required="required" rows="10"></textarea>
+								</div>
+								<div class="form-group">
+								<label class="control-label col-sm-3" for="image">Upload Image</label>
+								<div class="col-sm-9">
+									<input type="file" name="image" id="image" class="your-upload-class form-control input-sm" placeholder="image">
+								</div>
+							</div>
+							<br>
+							<span style="padding:30px;"></span>
+								<input class="btn btn-lg btn-success btn-block submit" type="submit" value="Post">
+							</fieldset>
+							</form>
+						</div>
+					</div>
+				</div>
+				{{#each mycontents}}
+					<div class="col-md-12">
+						<h4>{{title}}</h4>
+						<p>{{content}}</p>
+						<p><img src="/uploads/{{getImage image}}"  width="500px" height="280px"/></p>
+						<p><i>{{date}}</i></p>
+						<!-- Go to www.addthis.com/dashboard to generate a new set of sharing buttons -->
+						<p>
+						<a href="#" onclick="Share('https://api.addthis.com/oexchange/0.8/forward/facebook/offer','http%3A%2F%2Fwww.addthis.com&pubid=ra-563addde6f226e83&ct=1', 'Fb Share', 520, 300)"><img src="https://cache.addthiscdn.com/icons/v2/thumbs/32x32/facebook.png" border="0" alt="Facebook"/></a>
+						<a href="#" onclick="Share('https://api.addthis.com/oexchange/0.8/forward/twitter/offer','http%3A%2F%2Fwww.addthis.com&pubid=ra-563addde6f226e83&ct=1', 'Twitter Share', 520, 300)"><img src="https://cache.addthiscdn.com/icons/v2/thumbs/32x32/twitter.png" border="0" alt="Twitter"/></a>
+						<a href="#" onclick="Share('https://api.addthis.com/oexchange/0.8/forward/google_plusone_share/offer','http%3A%2F%2Fwww.addthis.com&pubid=ra-563addde6f226e83&ct=1', 'Google+ Share', 520, 300)"><img src="https://cache.addthiscdn.com/icons/v2/thumbs/32x32/google_plusone_share.png" border="0" alt="Google+"/></a>
+						<a href="#" onclick="Share('https://api.addthis.com/oexchange/0.8/forward/email/offer','http%3A%2F%2Fwww.addthis.com&pubid=ra-563addde6f226e83&ct=1', 'Email', 520, 300)"><img src="https://cache.addthiscdn.com/icons/v2/thumbs/32x32/email.png" border="0" alt="Email"/></a>
+						</p>
+					</div>
+				{{/each}}
+			
+			<div class="col-md-4">
+			
+			</div>
+	</div>
+</Template>
