@@ -1,57 +1,54 @@
+Session.set("loginError","");
 Template.login.events({
     'submit form': function(event,tpl){
-        event.preventDefault();
+		event.preventDefault();
         var email = $('[name=email]').val();
         var password = $('[name=password]').val();
-		/*$('.close').click();*/
-		Meteor.loginWithPassword(email, password, function(error){
+		
+        Meteor.loginWithPassword(email, password, function(error){
 			if(error){
-				alert(error.reason);
+				console.log(error.reason);
+				Session.set("loginError",error.reason);
 			} else {
-				var loggedInUser = Meteor.user();
-				var group = 'mygroup';
-				var currentRouter1 = Session.get('contentid_login');
-				var currentRouter2 = Session.get('like_login');
-				console.log("Content ID:"+currentRouter1);
-				if( currentRouter1!="" ){
-					Router.go('/content_detail/more/'+currentRouter1);
-				}else if(currentRouter2!=""){
-					Router.go('/');
-				}else{
-					if (Roles.userIsInRole(loggedInUser, ["Admin"], group)) {
-						Router.go('/admin');
-						//$('.close').click();
-					}
-					else if (Roles.userIsInRole(loggedInUser, ["member"], group)) {	
-							Router.go('/member/profile');
-							//$('.close').click();
-					 }else{
-						var username = Meteor.user().profile.username;
-						Router.go('/'+username);
-						 //$('.close').click();
-					 }
+				Session.set("loginError","");
+				 var loggedInUser = Meteor.user();
+				 var group = 'mygroup';
+				 if (Roles.userIsInRole(loggedInUser, ['admin'], group)) {
+					Router.go('/admin');
+					$('.close').click();
+				}
+				else if (Roles.userIsInRole(loggedInUser, ['member'], group)) {	
+					Router.go('/profile');
+						$('.close').click();
+				}
+				else{
+					Router.go('/register');
+					 $('.close').click();
 				}
 			}
 		});
     }
-    /* 'click #poplogin': function(event){
-    	//alert("jjss");
-    	$("#squarespaceModal").modal({                    
-			"backdrop"  : "static",
-			"keyboard"  : true,
-			"show"      : true   // show the modal immediately                  
-		  });
-    },
-	'click .close': function(event){
-    	//alert("jjss");
-    	Router.go('/');
-    },*/
-
+	
 });
-Template.login.onRendered(function(){
-	$("#squarespaceModal").modal({                    
-			"backdrop"  : "static",
-			"keyboard"  : true,
-			"show"      : true   // show the modal immediately                  
-		  });
+
+// Template.nav.events({
+	// 'click #poplogin': function(event){
+    	// //alert("jjss");
+    	// $("#squarespaceModal").modal({                    
+			// "backdrop"  : "static",
+			// "keyboard"  : true,
+			// "show"      : true   // show the modal immediately                  
+		// });
+    // }
+// });
+
+Template.login.helpers({
+	loginError:function(){
+		var msg = Session.get("loginError");
+		if( msg ) return true;
+		else return false;
+	},
+	loginErrormsg: function(){
+		return Session.get("loginError");
+	}
 });

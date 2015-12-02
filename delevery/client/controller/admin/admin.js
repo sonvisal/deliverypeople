@@ -8,9 +8,6 @@ Template.adduser.events({
 		var username =$('#username').val();
 		var email = $('#email').val();
 		var password =$('#password').val();
-		var facebook =$('#fb').val();
-		var instagram = $('#insta').val();
-		var twitter =$('#twitter').val();
 		var role = $('#role').val();
 		//profile.
 		Meteor.call('adduser',firstname, lastname, email,username, password,facebook,instagram,twitter, role);
@@ -62,9 +59,6 @@ Template.editadmin.events({
 		var username =$('#username').val();
 		var email = $('#email').val();
 		var password =$('#password').val();
-		var facebook =$('#fb').val();
-		var instagram = $('#insta').val();
-		var twitter =$('#twitter').val();
 		var role = $('#role').val();
 		console.log(firstname,lastname,username,email,password,facebook,instagram,twitter,role);
 
@@ -78,9 +72,6 @@ Template.editadmin.events({
 				lastname:lastname,
 				username:username,
 				password: password,
-				facebook:facebook,
-				instagram:instagram,
-				twitter:twitter
             }
         };
         var attrroles = {
