@@ -19,8 +19,11 @@ Router.route('/content',{
 Router.route('/service',{
 	name:'service'
 });
-Router.route('/page_detail',{
-	name:'pagedetail'
+Router.route('/page_detail/:_id',{
+	name:'pagedetail',
+	data: function(){
+		return content.findOne({_id:this.params._id});
+	}
 });
 Router.route('/:username',{
 	name:'profile',
