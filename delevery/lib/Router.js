@@ -13,6 +13,9 @@ Router.route('/',{
 Router.route('/about',{
 	name:'about'
 });
+Router.route('/search',{
+	name:'searchcontent'
+});
 Router.route('/content',{
 	name:'content'
 });
