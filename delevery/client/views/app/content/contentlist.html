@@ -1,0 +1,46 @@
+<Template name="contentlist">
+	<div class="container">
+    <span style="padding:30px;"></span>
+  	<!-- Show table of list -->
+	<h2>Show content</h2>  
+	<table class="table table-hover table-bordered order-table table-green">
+    <thead>
+      <tr>
+        <td>Title</td>
+		<td>Content</td>
+  		<td>Phone</td>
+  		<td>Email</td>
+  		<td>Price</td>
+		<td>Location Start</td>
+		<td>Location End</td>
+		<td>Date</td>
+		<td>Image</td>
+  		<td>Option</td>
+      </tr>
+    </thead>
+    {{#each content}}
+    <tbody>
+      <tr>
+        <td>{{title}}</td>
+ 		<td>{{message}}</td>
+ 		<td>{{phone}}</td>
+ 		<td>{{email}}</td>
+ 		<td>{{price}}</td>
+ 		<td>{{locationstart}}</td>
+ 		<td>{{locationend}}</td>
+ 		<td>{{datetime}}</td>
+		{{#if getImage image}}
+			<td><img src="{{baseUrl}}images/{{getImage image}}"  width="60px" height="60px"/></td>
+		  {{else}}
+		   <td>No Image</td>
+		{{/if}}
+ 		<td>
+			<a href="updatecontent/{{_id}}" class="update"><i class="fa fa-trash"></i></a>|
+			<a href="" class="remove" data-toggle="modal" data-target="#myModal"><i class="fa fa-pencil-square-o"></i></a>
+		</td>
+      </tr>
+    </tbody>
+    {{/each}}
+  </table>
+	</div>
+</Template>

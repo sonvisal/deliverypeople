@@ -1,7 +1,5 @@
 
-Session.set("img_con","");
-Session.set("error_message","");
-Template.content.helpers({
+Template.contentlist.helpers({
   baseUrl: function(){
      return Session.get('baseurl');
    },
@@ -14,18 +12,17 @@ Template.content.helpers({
      return;
     }
   },
-  postError:function(){
-   var msg = Session.get("error_message");
-   if( msg ) return true;
-   else return false;
-  },
-  postErrormsg: function(){
-   return Session.get("error_message");
+  content:function(){
+		return content.find();
   }
 });
-
-Template.content.events({
-  "click #postcontent": function(event, template){
+Template.contentlist.events({
+	'click .remove': function(){
+		var id = this._id;
+		content.remove(id);
+	},
+	"click #update": function(event, template){
+		event.preventDefault();
     var title = $("#title").val();
     var email = $("#email").val();
     var phone = $("#phone").val();
@@ -36,6 +33,7 @@ Template.content.events({
     var message = $("#message").val();
     var img = Session.get("img_con");
     var error_message = "";
+	
     if( title == "" || email =="" || phone =="" || phone =="" || price =="" || locationstart =="" || locationend ==""){
       if (title =="")
         error_message +="title is required";
@@ -68,7 +66,7 @@ Template.content.events({
           images:img
 
       }
-      Meteor.call("addcontent",attr);
+      Meteor.call("updatecontent",attr);
 	  Router.go('/contentlist');
     }
   },

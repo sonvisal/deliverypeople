@@ -1,6 +1,9 @@
 .breadcrumb{
 	margin-right: 32px;
 }
+table tr td{
+	color:#000;
+}
 .who{
 	border: 1px solid #ddd;
 	margin-bottom: 20px;

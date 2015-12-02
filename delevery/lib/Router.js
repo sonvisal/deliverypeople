@@ -13,6 +13,9 @@ Router.route('/',{
 Router.route('/about',{
 	name:'about'
 });
+Router.route('/search',{
+	name:'searchcontent'
+});
 Router.route('/content',{
 	name:'content'
 });
@@ -24,6 +27,9 @@ Router.route('/page_detail/:_id',{
 	data: function(){
 		return content.findOne({_id:this.params._id});
 	}
+});
+Router.route('/contentlist',{
+	name:'contentlist'
 });
 Router.route('/:username',{
 	name:'profile',
