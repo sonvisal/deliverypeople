@@ -1,0 +1,37 @@
+<template name="searchcontent">
+
+<div class="section">
+	<div class="container">
+			<span style="padding:30px;"></span>
+
+	
+		<!-- Our Blazzing offers -->
+			<section class="offer section-wrapper">
+				<div class="container">
+					<h2 class="section-title">
+					Our Blazzing offers
+				</h2>
+				<p class="section-subtitle">
+					Lorem Ipsum is simply dummy text of the industry.
+				</p>
+					<div class="row">
+						{{#each search_result}}
+						<div class="col-sm-3 col-xs-6">
+							<div class="offer-item">
+								<div class="icon">
+									<i class="ion-social-euro"></i>
+								</div>
+								<h3>
+									<a href="/page_detail">{{title}}</a>
+								</h3>
+								<p>{{phone}}</p>
+							</div>
+						</div> <!-- /.col-md-3 -->
+						{{/each}}
+					</div> <!-- /.row -->
+				</div> <!-- /.container -->
+			</section> <!-- /.offer -->
+</div>
+</div>
+
+</template>
