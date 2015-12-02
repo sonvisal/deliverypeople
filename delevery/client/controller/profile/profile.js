@@ -1,8 +1,4 @@
-/*Template.nav.helpers({
-	user:function(){
-		return Meteor.user();
-	}
-});*/
+
 Session.set('baseurl', '');
 Session.set('basepath', '');
 Session.set('img_pro','');
@@ -58,9 +54,6 @@ Template.profile.events({
 		var currpass = $('#currentpassword').val();
 		var newpass= $('#newpassword').val();
 		var confpass = $('#conformpassword').val();
-		var facebook = $('#facebook').val();
-		var instagram = $('#instagram').val();
-		var twitter = $('#twitter').val();
 		var img_id = Session.get('img_pro');
 		
 		var id = this._id;
@@ -76,9 +69,6 @@ Template.profile.events({
 				lastname:lname,
 				username:username,
 				password: newpass,
-				facebook:facebook,
-				instagram:instagram,
-				twitter:twitter,
 				image:img_id
             }
         };
@@ -86,27 +76,7 @@ Template.profile.events({
 		Meteor.call('updateprofile',id,attr);
 
 		//users.update(id,{$set:attr});
-		Router.go('/member/profile');
-		
-		/*
-		event.preventDefault();
-		console.log('curent:'+ currpass + ' new pass:'+ newpass + ' confirm pass:'+ confpass+" pass token:"+Session.get('resetPassword'));
-		
-		var resetPasswordForm = $(e.currentTarget),
-        password = resetPasswordForm.find('#resetPasswordPassword').val(),
-       passwordConfirm = resetPasswordForm.find('#resetPasswordPasswordConfirm').val();
-
-    if (isNotEmpty(password) && areValidPasswords(password, passwordConfirm)) {
-      Accounts.resetPassword(currpass, newpass, function(err) {
-        if (err) {
-          console.log('We are sorry but something went wrong.');
-        } else {
-          console.log('Your password has been changed. Welcome back!');
-          Session.set('resetPassword', null);
-        }
-      });
-    }
-    return false;*/
+		Router.go('/profile');
 	
 	},
 	'change #image': function(event, template) {
