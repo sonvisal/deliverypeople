@@ -60,6 +60,7 @@ Template.content.events({
           title:title,
           email:email,
           phone:phone,
+          price:price,
           locationstart:locationstart,
           locationend:locationend,
           datetime:datetime,
