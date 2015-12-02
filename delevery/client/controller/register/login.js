@@ -22,7 +22,7 @@ Template.login.events({
 						$('.close').click();
 				}
 				else{
-					Router.go('/register');
+					Router.go('/profile');
 					 $('.close').click();
 				}
 			}
