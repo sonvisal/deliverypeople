@@ -17,8 +17,18 @@ Router.route('/search',{
 	name:'searchcontent'
 });
 Router.route('/content',{
-	name:'content'
+	Template:'content'
 });
+// Router.route('/content',{
+// 	name:'content',
+// 	onBeforeAction:function(){
+// 		if(!Meteor.Meteor.userId()){
+// 			this.render('login');
+// 		}else {
+// 			this.next();
+// 		}
+// 	}
+// });
 Router.route('/service',{
 	name:'service'
 });
