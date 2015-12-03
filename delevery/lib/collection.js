@@ -14,5 +14,5 @@ else{
 }
 
 images = new FS.Collection("images", {
-    stores: [new FS.Store.FileSystem("images", {path:base_path+"/uploads"})]
+    stores: [new FS.Store.FileSystem("images", {path:base_path+"/public/images"})]
 });

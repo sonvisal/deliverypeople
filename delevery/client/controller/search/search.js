@@ -8,7 +8,7 @@ Template.home.events({
 		Router.go('/search');
 
 	}
-	
+
 });
 
 
@@ -19,16 +19,19 @@ Template.searchcontent.helpers({
 		if( keyword != "" ){
 			result =content.find({title: {$regex: new RegExp(keyword, "i")}});
 			return result;
-			console.log(result);
 		}
 		else{
+			return ;
+		}
+	},
+	getImage: function(id){
+	 var img = images.findOne({_id:id});
+	 if(img){
+		console.log(img.copies.images.key);
+		return img.copies.images.key;
+	 }else{
+		return;
+	 }
+ }
 
-			alert("There is no result !");
-			return;
-		}
-		}
-			
 });
-
-
-

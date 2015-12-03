@@ -28,9 +28,6 @@
 		                        <p class="header-sub-title">
 		                            it leaves you speecless, then turns your into a storyteller.
 		                        </p>
-		                        <button class="btn custom-btn">
-		                            book now
-		                        </button>
 		                    </div>
 		                </div>
 		            </li> <!-- /.slider-item -->
@@ -44,9 +41,6 @@
 		                        <p class="header-sub-title">
 		                            it leaves you speecless, then turns your into a storyteller.
 		                        </p>
-		                        <button class="btn custom-btn">
-		                            book now
-		                        </button>
 		                    </div>
 		                </div>
 		            </li> <!-- /.slider-item -->
@@ -85,16 +79,13 @@
 			</p>
 			<div class="row">
 			{{#each mycontents}}
-				<div class="col-sm-3 col-xs-6">
-					<div class="offer-item">
-
-		                <div class="view view-second">
-		                    <img src="/{{image}}" />
+				<div class="col-sm-4 col-xs-6">
+					<div class="offer-item" >
+		                <div class="view view-second" >
+		                    <img src="/images/{{getImage images }}" style="width:200px;height:200px"/>
 		                    <div class="mask"></div>
 		                    <div class="content">
-
 		                        <h2>
-
 		                    	<p><a href="/page_detail/{{_id}}">{{title}}</a></p>
 		                    	</h2>
 		                        <p>{{message}}<br/>
@@ -102,10 +93,8 @@
 		                        	<span style="color:red;">| Price:{{price}} $</span>
 		                        </p>
 		                        <a href="#" class="info">Read More</a>
-
 		                    </div>
 		                </div>
-
 					</div>
 				</div>
 			{{/each}}
