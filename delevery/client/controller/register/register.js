@@ -39,6 +39,7 @@ Template.register.events({
 					Session.set("registerError",err.reason);
 				}else{
 					Session.set("registerError","");
+					Session.set("loginError","");
 					Router.go('login'); 
 				}
 			});

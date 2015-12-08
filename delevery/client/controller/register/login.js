@@ -11,18 +11,32 @@ Template.login.events({
 				Session.set("loginError",error.reason);
 			} else {
 				Session.set("loginError","");
+				Session.set("registerError","");
 				 var loggedInUser = Meteor.user();
 				 var group = 'mygroup';
-				 if (Roles.userIsInRole(loggedInUser, ['admin'], group)) {
+
+				var currentRouter1 = Session.get('content');
+				var currentRouter2 = Session.get('profile');
+				var currentRouter3 = Session.get('addUser');
+				var currentRouter4 = Session.get('content');
+				console.log("Content ID:"+currentRouter1);
+				console.log("Content ID:"+currentRouter2);
+				if( currentRouter1 == 1){
+					Router.go('/content');
+				}
+				else if( currentRouter2 == 2){
+					Router.go('/profile');
+				}
+				else if (Roles.userIsInRole(loggedInUser, ['admin'], group)) {
 					Router.go('/admin');
 					$('.close').click();
 				}
 				else if (Roles.userIsInRole(loggedInUser, ['member'], group)) {	
-					Router.go('/profile');
+					Router.go('/');
 						$('.close').click();
 				}
 				else{
-					Router.go('/profile');
+					Router.go('/');
 					 $('.close').click();
 				}
 			}

@@ -16,19 +16,12 @@ Router.route('/about',{
 Router.route('/search',{
 	name:'searchcontent'
 });
-Router.route('/content',{
-	Template:'content'
+Router.route('/updatecontent/:_id',{
+	name:'updatecontent',
+	data: function(){
+		return content.findOne({_id:this.params._id});
+	}
 });
-// Router.route('/content',{
-// 	name:'content',
-// 	onBeforeAction:function(){
-// 		if(!Meteor.Meteor.userId()){
-// 			this.render('login');
-// 		}else {
-// 			this.next();
-// 		}
-// 	}
-// });
 Router.route('/service',{
 	name:'service'
 });
@@ -41,12 +34,37 @@ Router.route('/page_detail/:_id',{
 Router.route('/contentlist',{
 	name:'contentlist'
 });
-Router.route('/:username',{
-	name:'profile',
-	data:function(){
-		var da = users.findOne({'profile.username': this.params.username});
-		console.log(this.params.username);
-		console.log(da);
-		return da;
-	}
+Router.map(function () {
+	this.route('/content', {
+		name: 'content',
+		onBeforeAction: function (pause) {
+			if (!Meteor.user()) {
+				// render the login template but keep the url in the browser the same
+				Session.set('content',1);
+				this.render('login');
+			} else {
+				this.next();
+			}
+		}
+	})
+});
+Router.map(function () {
+	this.route('/profile', {
+		name: 'profile',
+		data:function(){
+			var da = users.findOne({'profile.username': this.params.username});
+			console.log(this.params.username);
+			console.log(da);
+			return da;
+		},
+		onBeforeAction: function (pause) {
+			if (!Meteor.user()) {
+				// render the login template but keep the url in the browser the same
+				Session.set('profile',2);
+				this.render('login');
+			} else {
+				this.next();
+			}
+		}
+	})
 });
