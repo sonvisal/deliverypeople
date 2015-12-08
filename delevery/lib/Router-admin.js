@@ -4,13 +4,13 @@ Router.map(function () {
 		onBeforeAction: function (pause) {
 			if (!Meteor.user()) {
 				// render the login template but keep the url in the browser the same
-				this.render('/login');
-			}
-			else{
+				Route.go('/login');
+			}else{
 				var loggedInUser = Meteor.user();
 				if( Roles.userIsInRole(loggedInUser, ['Normal User','member'],'mygroup') ){
-					alert('Need to logout and Log as Admin!')
-					this.render('home');
+					//alert('Need to logout and Log as Admin!');
+					Bert.alert( '<h4>Your need to log as Admin First!</h4>', 'danger', 'fixed-top', 'fa-info' );
+					this.render('/home');
 				}else if( Roles.userIsInRole(loggedInUser, ['Admin User','admin'],'mygroup')){
 					this.render('/admin');
 				}
