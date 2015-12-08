@@ -10,7 +10,7 @@ Template.adduser.events({
 		var password =$('#password').val();
 		var role = $('#role').val();
 		//profile.
-		Meteor.call('adduser',firstname, lastname, email,username, password,facebook,instagram,twitter, role);
+		Meteor.call('adduser',firstname, lastname, email,username, password,role);
 		console.log("insert success!");
         Router.go('admin'); 
 	}
@@ -32,12 +32,7 @@ Template.editadmin.helpers({
 		var id = Meteor.userId();
 		return Meteor.users.find({_id:id});
 		
-   }/*,
-  // getmsg: function(){
-    // var msg = Session.get('page_msg',msg);
-    // if( msg !="" ) return msg;
-    // else msg ='';
-  // }*/
+   }
 });
 Template.admin.events({
 	"click #remove": function(e, tpl) {
@@ -60,7 +55,7 @@ Template.editadmin.events({
 		var email = $('#email').val();
 		var password =$('#password').val();
 		var role = $('#role').val();
-		console.log(firstname,lastname,username,email,password,facebook,instagram,twitter,role);
+		console.log(firstname,lastname,username,email,password,role);
 
 		var attr={
 		

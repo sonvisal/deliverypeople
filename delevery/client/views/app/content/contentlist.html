@@ -1,46 +1,174 @@
 <Template name="contentlist">
-	<div class="container">
-    <span style="padding:30px;"></span>
-  	<!-- Show table of list -->
-	<h2>Show content</h2>  
-	<table class="table table-hover table-bordered order-table table-green">
-    <thead>
-      <tr>
-        <td>Title</td>
-		<td>Content</td>
-  		<td>Phone</td>
-  		<td>Email</td>
-  		<td>Price</td>
-		<td>Location Start</td>
-		<td>Location End</td>
-		<td>Date</td>
-		<td>Image</td>
-  		<td>Option</td>
-      </tr>
-    </thead>
-    {{#each content}}
-    <tbody>
-      <tr>
-        <td>{{title}}</td>
- 		<td>{{message}}</td>
- 		<td>{{phone}}</td>
- 		<td>{{email}}</td>
- 		<td>{{price}}</td>
- 		<td>{{locationstart}}</td>
- 		<td>{{locationend}}</td>
- 		<td>{{datetime}}</td>
-		{{#if getImage image}}
-			<td><img src="{{baseUrl}}images/{{getImage image}}"  width="60px" height="60px"/></td>
-		  {{else}}
-		   <td>No Image</td>
-		{{/if}}
- 		<td>
-			<a href="updatecontent/{{_id}}" class="update"><i class="fa fa-trash"></i></a>|
-			<a href="" class="remove" data-toggle="modal" data-target="#myModal"><i class="fa fa-pencil-square-o"></i></a>
-		</td>
-      </tr>
-    </tbody>
-    {{/each}}
-  </table>
-	</div>
+
+		<section class="section-background">
+			<div class="container">
+				<h2 class="page-header" style="color:white; font-weight:bold;">
+					CONTENT LISTS
+				</h2>
+				<br><br>
+				<br>
+			</div> <!-- /.container -->
+		</section> 
+		
+		<span style="padding:30px;"></span>
+		<!-- Show table of list -->
+		<h2>Show content</h2>  
+		<div class="row" id="shopping-cart" style="color:black;">
+			<div class="col-lg-12">
+				<div class="panel">
+					<div class="panel-body">
+						<div class="table-responsive">
+							<table class="table table-th-block table-dark">
+								<thead>
+									<tr>
+										<th>Photos</th>
+										<th>Title</th>
+										<th>Content</th>
+										<th>Location start</th>
+										<th>Location End</th>
+										<th>Date</th>
+										<th>Phone</th>
+										<th>Email</th>
+										<th>Price</th>
+										<th>Action</th>
+									</tr>
+								</thead>
+								<tbody>
+								{{#each content}}
+									<tr>
+										{{#if getImage images}}
+											<td><img src="{{baseUrl}}images/{{getImage images}}"  width="60px" height="60px"/></td>
+										{{else}}
+										   <td>No Image</td>
+										{{/if}}
+										<td>{{title}}</td>
+										<td>{{message}}</td>
+										<td>{{locationstart}}</td>
+										<td>{{locationend}}</td>
+										<td>{{datetime}}</td>
+										<td>{{phone}}</td>
+										<td>{{email}}</td>
+										<td>{{price}}</td>
+										<td>
+											<a href="" class="remove"><i class="fa fa-trash"></i></a>|
+											<a href="updatecontent/{{_id}}" ><i class="fa fa-pencil-square-o"></i></a>
+										</td>
+									</tr>
+								{{/each}}
+									<tr class="success">
+										<td colspan="10" class="text-right"></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+        </div>
+		
+		<div class="section-wrapper sponsor">
+			<div class="container">
+				<div class="owl-carousel sponsor-carousel">
+					<div class="item">
+						<a href="#">
+							<img src="assets/images/sp-1.png" alt="sponsor-brand" class="img-responsive sponsor-item">
+						</a>
+					</div>
+					<div class="item">
+						<a href="#">
+							<img src="assets/images/sp-2.png" alt="sponsor-brand" class="img-responsive sponsor-item">
+						</a>
+					</div>
+					<div class="item">
+						<a href="#">
+							<img src="assets/images/sp-3.png" alt="sponsor-brand" class="img-responsive sponsor-item">
+						</a>
+					</div>
+					<div class="item">
+						<a href="#">
+							<img src="assets/images/sp-4.png" alt="sponsor-brand" class="img-responsive sponsor-item">
+						</a>
+					</div>
+					<div class="item">
+						<a href="#">
+							<img src="assets/images/sp-5.png" alt="sponsor-brand" class="img-responsive sponsor-item">
+						</a>
+					</div>
+					<div class="item">
+						<a href="#">
+							<img src="assets/images/sp-6.png" alt="sponsor-brand" class="img-responsive sponsor-item">
+						</a>
+					</div>
+					<div class="item">
+						<a href="#">
+							<img src="assets/images/sp-1.png" alt="sponsor-brand" class="img-responsive sponsor-item">
+						</a>
+					</div>
+					<div class="item">
+						<a href="#">
+							<img src="assets/images/sp-2.png" alt="sponsor-brand" class="img-responsive sponsor-item">
+						</a>
+					</div>
+					<div class="item">
+						<a href="#">
+							<img src="assets/images/sp-3.png" alt="sponsor-brand" class="img-responsive sponsor-item">
+						</a>
+					</div>
+					<div class="item">
+						<a href="#">
+							<img src="assets/images/sp-4.png" alt="sponsor-brand" class="img-responsive sponsor-item">
+						</a>
+					</div>
+					<div class="item">
+						<a href="#">
+							<img src="assets/images/sp-5.png" alt="sponsor-brand" class="img-responsive sponsor-item">
+						</a>
+					</div>
+					<div class="item">
+						<a href="#">
+							<img src="assets/images/sp-6.png" alt="sponsor-brand" class="img-responsive sponsor-item">
+						</a>
+					</div>
+					<div class="item">
+						<a href="#">
+							<img src="assets/images/sp-1.png" alt="sponsor-brand" class="img-responsive sponsor-item">
+						</a>
+					</div>
+					<div class="item">
+						<a href="#">
+							<img src="assets/images/sp-2.png" alt="sponsor-brand" class="img-responsive sponsor-item">
+						</a>
+					</div>
+					<div class="item">
+						<a href="#">
+							<img src="assets/images/sp-3.png" alt="sponsor-brand" class="img-responsive sponsor-item">
+						</a>
+					</div>
+					<div class="item">
+						<a href="#">
+							<img src="assets/images/sp-4.png" alt="sponsor-brand" class="img-responsive sponsor-item">
+						</a>
+					</div>
+					<div class="item">
+						<a href="#">
+							<img src="assets/images/sp-5.png" alt="sponsor-brand" class="img-responsive sponsor-item">
+						</a>
+					</div>
+					<div class="item">
+						<a href="#">
+							<img src="assets/images/sp-6.png" alt="sponsor-brand" class="img-responsive sponsor-item">
+						</a>
+					</div>
+				</div> <!-- /.owl-carousel -->
+			</div> <!-- /.container -->
+		</div> <!-- /.sponsor -->
+		<div class="subscribe section-wrapper">
+			<ul class="social-icon">
+				<li><a href="#"><i class="ion-social-twitter"></i></a></li>
+				<li><a href="#"><i class="ion-social-facebook"></i></a></li>
+				<li><a href="#"><i class="ion-social-linkedin-outline"></i></a></li>
+				<li><a href="#"><i class="ion-social-googleplus"></i></a></li>
+			</ul>
+		</div> <!-- /.subscribe -->
+		
 </Template>

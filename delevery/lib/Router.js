@@ -68,3 +68,9 @@ Router.map(function () {
 		}
 	})
 });
+Router.route('/updatecontent/:_id',{
+	name:'updatecontent',
+	data: function(){
+		return content.findOne({_id:this.params._id});
+	}
+});

@@ -129,7 +129,8 @@
 /*/ Large Devices, Wide Screens /*/
 @media only screen and (min-width : 1200px) {
 	.container{
-		max-width:940px;
+		max-width:100%;
+		width:100%
 	}
 	.container_small{
 		margin:auto 80px;
