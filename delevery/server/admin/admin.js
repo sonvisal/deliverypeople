@@ -1,5 +1,5 @@
 Meteor.methods({
-	adduser:function(firstname, lastname, email, username, password, facebook, instagram, twitter, rerole){
+	adduser:function(firstname, lastname, email, username, password, rerole){
 		targetUserId = Accounts.createUser({
 			email: email,
 			password: password,
@@ -8,9 +8,6 @@ Meteor.methods({
 				lastname:lastname,
 				username:username,
 				password:password,
-				facebook:facebook,
-				instagram:instagram,
-				twitter:twitter,
 			}
 		});
 		console.log(targetUserId);
