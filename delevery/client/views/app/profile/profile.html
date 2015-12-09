@@ -1,25 +1,32 @@
 <template name="profile">
-		<div class="container">
+		<section class="section-background">
+			<div class="container">
+				<h2 class="page-header" style="color:white; font-weight:bold;">
+				{{#each users}}
+					<h3 style="color: #fff">{{profile.username}}</h3>
+				{{/each}}
+				</h2>
+			</div> <!-- /.container -->
+		</section> 
+		
+	<div class="container">
+		<div class="col-md-8 col-md-offset-2">
 
-		<div class="col-md-4 col-md-offset-3">
-
-		<div class="modal-dialog" style="margin-top:90px;">
-			<div class="modal-content">
+		<div class="modal-content" style="margin-top:30px;">
+		<!--<div class="modal-content"> -->
 				<div class="modal-header">
 					<h3 class="modal-title" id="lineModalLabel">Profile</h3>
 				</div>
-				<div class="modal-body">
-					<div class="panel panel-default" style="
-    color: black;
-">
+				<div class="">
+					<div class="panel panel-default" style="color: black;">
 					{{#each users}}
 						<div class="form-group">
-							<div class="col-xs-8 col-sm-4 col-lg-4" style="margin-top:10px;">
-								<p class = "img-thumbnail"><!-- <img src="{{baseUrl}}images/{{getImage profile.image}}" style="width:120px;"> -->
+							<div class="col-xs-8 col-sm-4 col-lg-4" style="margin-top:30px;">
+								<p class = "img-thumbnail">
 									{{#if haveImage}}
-										<img src="{{baseUrl}}images/{{getProfileImage}}" class="img-responsive center-block" width="150px" height ="200px">
+										<img src="{{baseUrl}}images/{{getProfileImage}}" class="img-responsive center-block" width="250px">
 									{{else}}
-										<img src="{{baseUrl}}images/sport.png" class="img-responsive center-block" width="150px" height ="200px">
+										<img src="{{baseUrl}}images/sport.png" class="img-responsive center-block" width="250px">
 									{{/if}}
 								</p>
 								<div class="form-group">
@@ -29,9 +36,6 @@
 									<input type="file" name="image" id="image" class="your-upload-class form-control input-sm">
 								</div>
 							</div>
-						<div class="panel-heading">
-							<h3 class="panel-title">Please Edite profile</h3>
-						</div>
 
 						<div class="panel-body">
 						{{#if loginError}}
@@ -96,9 +100,9 @@
 					{{/each}}
 					</div>
 				</div>
-			</div>
+		<!-- 	</div> -->
 		</div>
 		</div>
-
 	</div>
+	<br/>
 </template>
