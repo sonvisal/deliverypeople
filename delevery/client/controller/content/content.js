@@ -36,6 +36,7 @@ Template.content.events({
     var message = $("#message").val();
     var img = Session.get("img_con");
     var error_message = "";
+	console.log(title,email,phone,price,locationstart,locationend,datetime,message,img);
     if( title == "" || email =="" || phone =="" || phone =="" || price =="" || locationstart =="" || locationend ==""){
       if (title =="")
         error_message +="title is required";

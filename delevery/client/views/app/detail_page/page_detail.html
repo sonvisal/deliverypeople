@@ -1,32 +1,109 @@
 <template name="pagedetail">
-
+<span style="padding:30px;"></span>
+ <p></p>
+<section class="section-background">
+   <div class="container">
+    <h2 class="page-header" style="color:white; font-weight:bold;">
+     CONTENT DETAIL
+    </h2>
+   
+   </div> <!-- /.container -->
+  </section> 
+		
 <div class="section">
-		<div class="container">
-		<!-- {{#each detial}} -->
-		<span style="padding:30px;"></span>
+		<p></p>
+		<p></p>
+		<p></p>
 
-			<div class="col-md-6 box_detail">
-				<h4>The Cambodia Travel</h4>
-				<img src="/images/{{getImage images }}" style="width:200px;height:200px"/>
-				 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d250151.1512034605!2d104.75009803674607!3d11.579666939586584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3109513dc76a6be3%3A0x9c010ee85ab525bb!2sPhnom+Penh!5e0!3m2!1sen!2skh!4v1449036781483" width="350" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
-      			 <p></p>
-			</div>
-			<!-- {{/each}} -->
-			<div class="col-md-6">
-
-					<div class="list-comment">
-						<p>Phone : {{phone}}</p><br>
-						<p>Email : {{email}}</p><br>
-						<p>Date :  {{datetime}}</p><br>
-						<p>Price : {{price}}$</p><br>
-						<!-- <p>People : {{people}}</p><br> -->
-						<p>Description : {{message}}</p><br>
-						<p>Location Start:  {{locationstart}}</p>
-						<p>Location Stop:  {{locationend}}</p>
-					</div>
-
-		</div>
-		</div>
-    </div>
+	 <div class="container">
+	 		<span style="padding:30px;"></span>
+			<p></p>
+		<p></p>
+		<p></p>
+            <div id="main">
+                <!-- start:store detail -->
+                <div class="row" id="store-detail">
+                    <div class="col-lg-12">
+                        <div class="panel">
+                            <div class="panel-body">
+                                <div class="row">
+								 <div class="col-md-1">
+									
+                                    </div>
+                                    <div class="col-md-4">
+										
+										<h4 style="color:#336699">
+										   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										   Let's go with us!
+										</h4>
+										<img src="/images/{{getImage images }}" style="width:350px;height:350px;border:5px groove gold;"/>
+										<br>
+										
+                                    
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="store-detail-title">
+                                              </div>
+                                        <div class="store-detail-content">
+                                          <div class="panel panel-warning">
+                                                <div class="panel-heading">
+                                                    <a>
+                                                        <h4 class="panel-title">
+                                                            Detail Information
+                                                        </h4>
+                                                    </a>
+                                                </div>
+                                                <div id="detailbarang" class="panel-collapse collapse in">
+                                                    <div class="panel-body" style="color:black;">
+														<div class="list-comment">
+												<div class="row">
+													<div class="col-sm-6 col-xs-6">
+														<p>Phone: {{phone}}</p>
+													</div>
+													<div class="col-sm-6 col-xs-6">
+														<p>  Email: {{email}}</p>
+													</div>
+												</div>
+											 <div class="row">
+                                                <div class="col-sm-6 col-xs-6">
+                                                    <p>Date : {{datetime}}</p>
+                                                </div>
+                                                <div class="col-sm-6 col-xs-6">
+                                                    <p>Price : {{price}}$</p>
+                                                </div>
+                                            </div>
+											<div class="row">
+                                               
+                                                <div class="col-sm-6 col-xs-6">
+                                                   <p>Location Start	: {{locationstart}}</p>
+												   <br>
+												   <p>Location Stop	: {{locationend}}</p><br>
+                                                </div>
+												 <div class="col-sm-6 col-xs-6">
+                                                    <p>Description : {{message}}</p>
+                                                </div>
+                                            </div>
+													<p> <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d250151.1512034605!2d104.75009803674607!3d11.579666939586584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3109513dc76a6be3%3A0x9c010ee85ab525bb!2sPhnom+Penh!5e0!3m2!1sen!2skh!4v1449036781483" width="550" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
+													</p>
+														</div>
+													</div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                               <p></p>
+                                            </div>
+                                        </div>
+                                    </div>
+									<div class="col-md-1">
+									
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+             </div>
+             </div>
 
 </template>
