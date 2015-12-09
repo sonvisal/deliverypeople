@@ -1403,9 +1403,8 @@ a.bg-danger:hover {
   background-color: #e27c79;
 }
 .page-header {
-  padding-bottom: 9px;
   margin: 40px 0 20px;
-  border-bottom: 1px solid #eeeeee;
+  padding-top: 155px;
 }
 ul,
 ol {
@@ -2268,6 +2267,7 @@ th {
   line-height: 1.42857143;
   vertical-align: top;
   border-top: 1px solid #dddddd;
+  width:0%;
 }
 .table > thead > tr > th {
   vertical-align: bottom;
@@ -2433,7 +2433,7 @@ table th[class*="col-"] {
   background-color: #e7908e;
 }
 .table-responsive {
-  overflow-x: auto;
+  overflow-x: none;
   min-height: 0.01%;
 }
 @media screen and (max-width: 767px) {
@@ -2480,7 +2480,7 @@ table th[class*="col-"] {
   .table-responsive > .table-bordered > tfoot > tr:last-child > td {
     border-bottom: 0;
   }
-}
+} 
 fieldset {
   padding: 0;
   margin: 0;
