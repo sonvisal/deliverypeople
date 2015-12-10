@@ -4,7 +4,6 @@ Router.map(function () {
 		onBeforeAction: function (pause) {
 			if (!Meteor.user()) {
 				// render the login template but keep the url in the browser the same
-				//Route.go('/login');
 				this.render('/login');
 			}else{
 				var loggedInUser = Meteor.user();
@@ -31,7 +30,7 @@ Router.map(function () {
 			else{
 				var loggedInUser = Meteor.user();
 				if( Roles.userIsInRole(loggedInUser, ['Normal User','member'],'mygroup') ){
-					this.render('/');
+					this.render('/login');
 				}else if( Roles.userIsInRole(loggedInUser, ['Admin User','admin'],'mygroup')){
 					this.render('/adduser');
 				}
