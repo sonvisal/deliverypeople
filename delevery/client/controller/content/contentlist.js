@@ -36,7 +36,7 @@ Template.updatecontent.events({
 		var message = $("#message").val();
 		var img = Session.get("img_con");
 		var error_message = "";
-		
+
 		if( title == "" || email =="" || phone =="" || phone =="" || price =="" || locationstart =="" || locationend ==""){
 		  if (title =="")
 			error_message +="title is required";
@@ -84,4 +84,36 @@ Template.updatecontent.events({
 		}
 	  //console.log('img uploaded!');
 	}
+
 });
+
+Template.updatecontent.helpers({
+  exampleMapOptions: function() {
+     // Make sure the maps API has loaded
+     if (GoogleMaps.loaded()) {
+       // Map initialization options
+       return {
+         center: new google.maps.LatLng(11.5500, 104.9167),
+         zoom: 14
+       };
+     }
+   }
+});
+
+
+Meteor.startup(function() {
+    GoogleMaps.load();
+  });
+  Template.updatecontent.onRendered(function() {
+    GoogleMaps.load();
+  });
+  Template.updatecontent.onCreated(function() {
+    // We can use the `ready` callback to interact with the map API once the map is ready.
+    GoogleMaps.ready('exampleMap', function(map) {
+      // Add a marker to the map once it's ready
+      var marker = new google.maps.Marker({
+        position: map.options.center,
+        map: map.instance
+      });
+    });
+  });

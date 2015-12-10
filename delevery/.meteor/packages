@@ -36,3 +36,6 @@ peerlibrary:fs
 npm-container
 fortawesome:fontawesome
 themeteorchef:bert
+jeremy:geocomplete
+dburles:google-maps
+tsega:bootstrap3-datetimepicker

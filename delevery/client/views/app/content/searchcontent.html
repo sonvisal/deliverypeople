@@ -3,37 +3,40 @@
 <div class="section">
 	<div class="container">
 			<span style="padding:30px;"></span>
-
-			<!-- Our Blazzing offers -->
-	<section class="offer section-wrapper">
-				<div class="container">
-					<h2 class="section-title">
-					Get Our tur today!!!
-				</h2>
-				<p class="section-subtitle">
-					Welcome to service!
-				</p>
-					<div class="row text-center">
-						{{#each search_result}}
-							<div class="col-md-3 col-sm-6 hero-feature">
-								<div class="cat-list-title">
-									<h5>
-										<a href="/page_detail/{{_id}}">{{title}}</a>
-									</h5>
-								</div>
-								<div class="cat-bar1"></div>
-								<a href="/page_detail/{{_id}}">
-								<img class="thumbnail" src="/images/{{getImage images }}" style="width:130px;height:140px"/>
-								</a>
-								<span style="color:black;">{{datetime}}</span>
-								<span style="color:red;">| {{price}} $</span>
-								<p class="recent-update">{{phone}}</p>
-								<br />
-							</div>
-						{{/each}}
-					</div> <!-- /.row -->
-				</div> <!-- /.container -->
-			</section> <!-- /.offer -->
+			
+			<section class="offer section-wrapper">
+						<div class="container">
+							<h2 class="section-title">
+						Here is the trip today!!
+					</h2>
+					<p class="section-subtitle">
+						You can find and see all
+					</p>
+							<div class="row text-center">
+								{{#each search_result}}
+									<div class="col-md-3 col-sm-6 hero-feature">
+										<span class="">
+											<h5>
+												<a href="/page_detail/{{_id}}">{{title}}</a>
+											</h5>
+										</span>
+										<div class="cat-bar1"></div>
+										<br />
+										<span>
+										<a href="/page_detail/{{_id}}"><img class="thumbnail" src="/images/{{getImage images }}" style="width:230px;height:240px; margin: 0 auto;"/></a>
+										</span>
+										<span style="color:black;">{{datetime}}</span>
+										<span style="color:red;">| {{price}} $</span>
+										<br />
+										 <p>
+										 <a href="/page_detail/{{_id}}">{{message}}</a>
+										</p>
+										<p class="recent-update">{{phone}}</p>
+									</div>
+								{{/each}}
+							</div> <!-- /.row -->
+						</div> <!-- /.container -->
+					</section> <!-- /.offer -->
 </div>
 </div>
 
