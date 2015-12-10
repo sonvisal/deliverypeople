@@ -67,37 +67,65 @@
 
 <!-- Our Blazzing offers -->
 	<section class="offer section-wrapper">
-		<div class="container">
-			<h2 class="section-title">
+				<div class="container">
+					<h2 class="section-title">
 				Here is the trip today!!
 			</h2>
 			<p class="section-subtitle">
 				You can find and see all
 			</p>
+					<div class="row text-center">
+						{{#each mycontents}}
+							<div class="col-md-3 col-sm-6 hero-feature">
+								<span class="">
+									<h5>
+										<a href="/page_detail/{{_id}}">{{title}}</a>
+									</h5>
+								</span>
+								<div class="cat-bar1"></div>
+								<br />
+								<span>
+								<a href="/page_detail/{{_id}}"><img class="thumbnail" src="/images/{{getImage images }}" style="width:230px;height:240px; margin: 0 auto;"/></a>
+								</span>
+								<span style="color:black;">{{datetime}}</span>
+								<span style="color:red;">| {{price}} $</span>
+								<br />
+								 <p>
+								 <a href="/page_detail/{{_id}}">{{message}}</a>
+								</p>
+								<p class="recent-update">{{phone}}</p>
+							</div>
+						{{/each}}
+					</div> <!-- /.row -->
+				</div> <!-- /.container -->
+			</section> <!-- /.offer -->
+
+	<div class="subscribe section-wrapper">
+		<a class="brand-logo" href="index.html" title="HOME"><img src="/images/logo.png"></a>
+		<p class="subscribe-now">
+			Subscribe to our Newsletter
+		</p>
+		<div class="container">
 			<div class="row">
-			{{#each mycontents}}
-				<div class="col-sm-4 col-xs-6">
-					<div class="offer-item" >
-		                <div class="view view-second" >
-		                    <a href="/page_detail/{{_id}}"><img src="/images/{{getImage images }}" style="width:200px;height:200px"/></a>
-		                    <div class="mask"></div>
-		                    <div class="content">
-		                        <h2>
-		                    	<p><a href="/page_detail/{{_id}}">{{title}}</a></p>
-		                    	</h2>
-		                        <p><a href="/page_detail/{{_id}}">{{message}}</a><br/>
-		                        	<span style="color:black;">Date:{{datetime}}</span>
-		                        	<span style="color:red;">| Price:{{price}} $</span>
-		                        </p>
-		                        <a href="/page_detail/{{_id}}" class="info">Read More</a>
-		                    </div>
-		                </div>
-					</div>
+				<div class="col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3">
+					<div class="input-group">
+						<input type="email" class="form-control border-radius" placeholder="Email address">
+						<span class="input-group-btn">
+							<button class="btn btn-default border-radius custom-sub-btn" type="button">DONE</button>
+						</span>
+					</div><!-- /input-group -->
 				</div>
-			{{/each}}
 			</div>
-		</div> <!-- /.container -->
-	</section> <!-- /.offer -->
-	 <!-- /.sponsor -->
+		</div>
+
+
+
+		<ul class="social-icon">
+			<li><a href="#"><i class="ion-social-twitter"></i></a></li>
+			<li><a href="#"><i class="ion-social-facebook"></i></a></li>
+			<li><a href="#"><i class="ion-social-linkedin-outline"></i></a></li>
+			<li><a href="#"><i class="ion-social-googleplus"></i></a></li>
+		</ul>
+	</div> <!-- /.subscribe -->
 
 </Template>

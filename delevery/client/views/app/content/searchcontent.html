@@ -4,9 +4,8 @@
 	<div class="container">
 			<span style="padding:30px;"></span>
 
-
-		<!-- Our Blazzing offers -->
-			<section class="offer section-wrapper">
+			<!-- Our Blazzing offers -->
+	<section class="offer section-wrapper">
 				<div class="container">
 					<h2 class="section-title">
 					Get Our tur today!!!
@@ -14,19 +13,23 @@
 				<p class="section-subtitle">
 					Welcome to service!
 				</p>
-					<div class="row">
+					<div class="row text-center">
 						{{#each search_result}}
-						<div class="col-sm-3 col-xs-6">
-							<img src="/images/{{getImage images }}" style="width:100px;height:100px"/>
-							<div class="offer-item">
-								<div class="icon">
+							<div class="col-md-3 col-sm-6 hero-feature">
+								<div class="cat-list-title">
+									<h5>
+										<a href="/page_detail/{{_id}}">{{title}}</a>
+									</h5>
 								</div>
-								<h3>
-									<a href="/page_detail/{{_id}}">{{title}}</a>
-								</h3>
-								<p>{{phone}}</p>
+								<div class="cat-bar1"></div>
+								<a href="/page_detail/{{_id}}">
+								<img class="thumbnail" src="/images/{{getImage images }}" style="width:130px;height:140px"/>
+								</a>
+								<span style="color:black;">{{datetime}}</span>
+								<span style="color:red;">| {{price}} $</span>
+								<p class="recent-update">{{phone}}</p>
+								<br />
 							</div>
-						</div> <!-- /.col-md-3 -->
 						{{/each}}
 					</div> <!-- /.row -->
 				</div> <!-- /.container -->
